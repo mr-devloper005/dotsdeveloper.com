@@ -140,10 +140,12 @@ export function Footer() {
 
   if (recipe.footer === 'editorial-footer') {
     const editorialNav = [
-      { name: 'Homepage', href: '/' },
       { name: 'News', href: '/articles' },
       { name: 'About us', href: '/about' },
       { name: 'Contacts', href: '/contact' },
+      { name: 'Help Center', href: '/help' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms and Conditions', href: '/terms' },
     ]
     return (
       <footer className="border-t border-[#cfe8e0] text-[#1a1a1a]">
