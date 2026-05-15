@@ -4,12 +4,11 @@ import { useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Search, Menu, X, User, FileText, Building2, LayoutGrid, Tag, Image as ImageIcon, ChevronRight, Sparkles, MapPin, Plus, Home, Newspaper, Info, Mail, ArrowRight } from 'lucide-react'
+import { Search, Menu, X, User, FileText, Building2, LayoutGrid, Tag, Image as ImageIcon, ChevronRight, Sparkles, MapPin, Plus, Info, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/lib/auth-context'
 import { SITE_CONFIG, type TaskKey } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
-import { siteContent } from '@/config/site.content'
 import { getFactoryState } from '@/design/factory/get-factory-state'
 import { NAVBAR_OVERRIDE_ENABLED, NavbarOverride } from '@/overrides/navbar'
 
@@ -19,8 +18,6 @@ const NavbarAuthControls = dynamic(() => import('@/components/shared/navbar-auth
 })
 
 const editorialPublicLinks = [
-  { name: 'Homepage', href: '/', icon: Home },
-  { name: 'News', href: '/articles', icon: Newspaper },
   { name: 'About us', href: '/about', icon: Info },
   { name: 'Contacts', href: '/contact', icon: Mail },
 ] as const
@@ -127,7 +124,6 @@ export function Navbar() {
               </div>
               <div className="min-w-0 hidden sm:block">
                 <span className="font-display block truncate text-2xl font-semibold tracking-tight">{SITE_CONFIG.name}</span>
-                <span className="block text-[10px] uppercase tracking-[0.24em] opacity-60">{siteContent.navbar.tagline}</span>
               </div>
             </Link>
 
@@ -222,7 +218,6 @@ export function Navbar() {
             </div>
             <div className="min-w-0 hidden sm:block">
               <span className="font-display block truncate text-2xl font-semibold tracking-tight">{SITE_CONFIG.name}</span>
-              <span className="hidden text-[10px] uppercase tracking-[0.28em] opacity-70 sm:block">{siteContent.navbar.tagline}</span>
             </div>
           </Link>
 
@@ -308,12 +303,13 @@ export function Navbar() {
               <Button variant="ghost" size="sm" asChild className="rounded-full px-4">
                 <Link href="/login">Sign In</Link>
               </Button>
-              <Button size="sm" asChild className={cn(style.cta, isEditorial && 'rounded-lg px-5')}>
-                <Link href={isEditorial ? '/create/article' : '/register'} className="inline-flex items-center gap-2">
-                  {isEditorial ? 'Submit article' : isUtility ? 'Post Now' : 'Get Started'}
-                  {isEditorial ? <ArrowRight className="h-4 w-4" /> : null}
-                </Link>
-              </Button>
+              {!isEditorial ? (
+                <Button size="sm" asChild className={style.cta}>
+                  <Link href="/register" className="inline-flex items-center gap-2">
+                    {isUtility ? 'Post Now' : 'Get Started'}
+                  </Link>
+                </Button>
+              ) : null}
             </div>
           )}
 

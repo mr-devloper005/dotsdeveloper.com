@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Building2, FileText, Image as ImageIcon, LayoutGrid, Newspaper, Tag, User } from 'lucide-react'
+import { ArrowRight, Building2, FileText, Image as ImageIcon, LayoutGrid, Tag, User } from 'lucide-react'
 import { ContentImage } from '@/components/shared/content-image'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
@@ -168,29 +168,11 @@ export async function TaskListPage({ task, category }: { task: TaskKey; category
             <section className="mb-10 overflow-hidden rounded-2xl border border-[#cfe8e0] bg-[#e8f3f1] lg:rounded-3xl">
               <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
                 <div>
-                  <nav className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#5a6562]">
-                    <Link href="/" className="transition hover:text-[#1a1a1a]">
-                      Homepage
-                    </Link>
-                    <span aria-hidden>/</span>
-                    <span className="text-[#1a1a1a]">News</span>
-                  </nav>
-                  <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#cfe8e0] bg-white/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#5a6562]">
-                    <Newspaper className="h-3.5 w-3.5" />
-                    Fresh perspectives
-                  </div>
                   <h1 className="font-display mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-[#1a1a1a] sm:text-5xl">Stories worth slowing down for</h1>
                   <p className={`mt-5 max-w-2xl text-base leading-relaxed ${ui.muted}`}>
                     Browse reporting, essays, and explainers in one calm reading room. Pick a topic, open a cover line, and keep the same mint-and-charcoal rhythm you see on the homepage.
                   </p>
                   <div className="mt-6 flex flex-wrap gap-3">
-                    <Link
-                      href="/create/article"
-                      className={`inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold ${ui.button}`}
-                    >
-                      Submit a story
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
                     <Link
                       href="/contact"
                       className="inline-flex items-center gap-2 rounded-lg border border-[#cfe8e0] bg-white px-5 py-2.5 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#f4faf8]"
@@ -198,20 +180,6 @@ export async function TaskListPage({ task, category }: { task: TaskKey; category
                       Tip the news desk
                     </Link>
                   </div>
-                  <dl className="mt-8 grid max-w-lg grid-cols-3 gap-4 border-t border-[#cfe8e0] pt-6">
-                    <div>
-                      <dt className={`text-[11px] font-semibold uppercase tracking-wider ${ui.muted}`}>Updated</dt>
-                      <dd className="mt-1 font-display text-lg font-semibold text-[#1a1a1a]">Weekly</dd>
-                    </div>
-                    <div>
-                      <dt className={`text-[11px] font-semibold uppercase tracking-wider ${ui.muted}`}>Focus</dt>
-                      <dd className="mt-1 font-display text-lg font-semibold text-[#1a1a1a]">Long-form</dd>
-                    </div>
-                    <div>
-                      <dt className={`text-[11px] font-semibold uppercase tracking-wider ${ui.muted}`}>Format</dt>
-                      <dd className="mt-1 font-display text-lg font-semibold text-[#1a1a1a]">Editorial</dd>
-                    </div>
-                  </dl>
                 </div>
                 <div className={`relative min-h-[200px] rounded-2xl border border-[#cfe8e0] bg-white/80 p-5 shadow-sm sm:min-h-[240px] ${ui.panel}`}>
                   <p className={`text-xs font-semibold uppercase tracking-[0.24em] ${ui.muted}`}>Browse by topic</p>

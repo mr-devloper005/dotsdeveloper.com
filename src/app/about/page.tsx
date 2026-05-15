@@ -131,9 +131,6 @@ export default function AboutPage() {
               Send a short note with links to past work—we read everything and respond within a few business days when there is a fit.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Button asChild className="rounded-lg bg-[#1a1a1a] text-white hover:bg-[#2d2d2d]">
-                <Link href="/create/article">Start a draft</Link>
-              </Button>
               <Button asChild variant="outline" className="rounded-lg border-[#cfe8e0] bg-white hover:bg-[#f4faf8]">
                 <Link href="/contact">Email the editors</Link>
               </Button>

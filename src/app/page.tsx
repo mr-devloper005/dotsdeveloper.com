@@ -314,12 +314,6 @@ function EditorialHome({ primaryTask, articlePosts }: { primaryTask?: EnabledTas
               Submit your article and join our network!
             </h1>
             <p className={`mt-6 max-w-lg text-base leading-relaxed ${tone.muted}`}>{SITE_CONFIG.description}</p>
-            <div className="mt-8">
-              <Link href="/create/article" className={tone.action}>
-                Submit article
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
           </div>
           <div className="flex w-full max-w-md items-end justify-center gap-2 self-end sm:mx-auto sm:max-w-lg sm:gap-3 lg:mx-0 lg:max-w-none lg:justify-end">
             {[0, 1, 2].map((i) => {
