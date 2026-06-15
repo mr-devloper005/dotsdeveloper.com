@@ -299,9 +299,6 @@ export async function TaskDetailPage({ task, slug }: { task: TaskKey; slug: stri
 
                 <article className="mx-auto mt-6 w-full max-w-4xl rounded-2xl border border-[#cfe8e0] bg-white shadow-sm">
                   <div className="px-5 py-7 sm:px-10 sm:py-10">
-                    {articleSummary ? (
-                      <p className="text-base leading-7 text-[#5a6562]">{articleSummary}</p>
-                    ) : null}
 
                     {images[0] ? (
                       <div className={cn("relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-xl border border-[#cfe8e0] bg-[#f4faf8]")}>
